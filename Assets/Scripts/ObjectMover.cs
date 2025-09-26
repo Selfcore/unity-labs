@@ -47,6 +47,11 @@ namespace ProjectAssets.Scripts
             }
         }
 
+        private void FixedUpdate()
+        {
+            _rigidbody.linearVelocity = new Vector2(_horizontalInput * _speed, _rigidbody.linearVelocity.y);
+        }
+
         // MonoBehavior method that raised when object interacted with another Collider2D
         private void OnCollisionEnter2D(Collision2D other)
         {
