@@ -59,6 +59,18 @@ namespace ProjectAssets.Scripts
             {
                 _isGrounded = true;
             }
+
+            if (other.gameObject.CompareTag("Platform"))
+            {
+                Debug.unityLogger.Log(other.gameObject.name, "OnCollisionEnter2D");
+                _isGrounded = true;
+                this.transform.SetParent(other.transform, true);
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            
         }
     }
 }
