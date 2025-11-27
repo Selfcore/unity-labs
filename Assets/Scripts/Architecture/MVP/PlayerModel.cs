@@ -7,8 +7,8 @@ public class PlayerModel
     
     public event Action<float> OnHealthChanged; 
     
-    public float Speed { get; set; } = 50f;
-    public float JumpForce { get; set; } = 20f;
+    public float Speed { get; set; } = 75.0f;
+    public float JumpForce { get; set; } = 125.0f;
     public bool IsGrounded { get; set; }
 
     public float Health

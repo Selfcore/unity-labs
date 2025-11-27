@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ProjectAssets.Scripts.Architecture.MVP.Player
 {
-    public class PlayerView : MonoBehaviour
+    public class PlayerView : MonoBehaviour, IPlayerView
     {
         public event Action<float> OnInputChanged;
         public event Action OnJumped;
@@ -37,7 +37,7 @@ namespace ProjectAssets.Scripts.Architecture.MVP.Player
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Ground"))
+            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
             {
                 OnLanded?.Invoke();
             }

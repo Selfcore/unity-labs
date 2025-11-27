@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class HealthPresenter : IDisposable
 {
+    [Inject]
     private readonly HealthView _view;
+    [Inject]
     private readonly PlayerModel _playerModel;
 
     public HealthPresenter(PlayerModel playerModel, HealthView healthView)

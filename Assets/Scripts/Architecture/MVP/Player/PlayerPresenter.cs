@@ -1,14 +1,17 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 namespace ProjectAssets.Scripts.Architecture.MVP.Player
 {
     public class PlayerPresenter : IDisposable
     {
-        private readonly PlayerView _view;
+        [Inject]
+        private readonly IPlayerView _view;
+        [Inject]
         private readonly PlayerModel _model;
         
-        public PlayerPresenter(PlayerModel model, PlayerView view)
+        public PlayerPresenter(PlayerModel model, IPlayerView view)
         {
             _model = model;
             _view = view;
